@@ -138,6 +138,10 @@
     <button id="loveBtn">I LOVE YOU 💗</button>
 </div>
 
+<!-- Jumpscare overlay -->
+<div id="jumpscare">
+    <video id="scareVideo" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+</div>
 
 <!-- Gallery Overlay -->
 <div id="galleryOverlay">
@@ -150,7 +154,7 @@
 <script>
     const message =
     "To the girl who makes my heart smile every single day... 💗\n\n" +
-    "Happy Birthday 💕 You are my happiness, my peace, and my chikaaa (please don't mind if i called you my chikaa 😝😝)\n\n" +
+    "Happy Birthday 💕 You are my happiness, my peace, and my chikaaa (please don't mind 😝😝)\n\n" +
     "I promise to stand by you, laugh with you, and love you a LITTLE more every day 💗💗\n\n" +
     "I know things are getting too hard nowadays, but we’ll figure it out somehow… 🥺\n\n" +
     "HAPPPYYY BIRTHDAYYY ONCE AGAINNN 💗💗💗\n\n" +
@@ -165,9 +169,16 @@
             typeDiv.innerHTML += message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
             i++;
             setTimeout(typeWriter, speed);
-        } 
-         
-         
+        } else {
+            // Show jumpscare
+            setTimeout(() => {
+                const overlay = document.getElementById("jumpscare");
+                const video = document.getElementById("scareVideo");
+                overlay.style.display = "flex";
+                video.play();
+            }, 800);
+        }
+    }
 
     typeWriter();
 
@@ -204,6 +215,8 @@
 
 </body>
 </html>
+
+
 
 
 
