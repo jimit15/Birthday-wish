@@ -2,182 +2,144 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday 💗</title>
-
+<title>Happy Birthday ❤️</title>
 <style>
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ff758c, #ff9acb);
-    color: white;
-    overflow-x: hidden;
-}
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+    }
 
-/* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+    .card {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        max-width: 600px;
+        z-index: 2;
+    }
 
-.hero h1 {
-    font-size: 3.5rem;
-    animation: glow 2s infinite alternate;
-}
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        animation: glow 2s infinite alternate;
+    }
 
-/* SECTION */
-.section {
-    padding: 80px 20px;
-    text-align: center;
-}
+    #typewriter {
+        font-size: 1.3rem;
+        min-height: 120px;
+        margin-bottom: 20px;
+    }
 
-/* ENVELOPE */
-.envelope {
-    width: 170px;
-    height: 120px;
-    background: #ff4f7b;
-    border-radius: 12px;
-    margin: auto;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-    animation: bounce 2s infinite;
-}
+    button {
+        background-color: #ff5e7e;
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
 
-.envelope::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #ff6b91;
-    clip-path: polygon(0 0, 100% 0, 50% 55%);
-}
+    button:hover {
+        transform: scale(1.1);
+    }
 
-.envelope span {
-    position: absolute;
-    bottom: -40px;
-    width: 100%;
-    font-size: 1.1rem;
-}
+    .photos {
+        display: none;
+        margin-top: 20px;
+    }
 
-/* LETTER */
-.letter {
-    max-width: 600px;
-    margin: 50px auto 0;
-    background: rgba(255,255,255,0.18);
-    padding: 30px;
-    border-radius: 20px;
-    display: none;
-    backdrop-filter: blur(10px);
-    animation: open 1s ease forwards;
-}
+    .photos img {
+        width: 45%;
+        margin: 10px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
 
-#typewriter {
-    font-size: 1.2rem;
-    line-height: 1.7;
-}
+    .heart {
+        position: absolute;
+        color: red;
+        font-size: 20px;
+        animation: floatUp 5s linear infinite;
+    }
 
-/* FLOATING HEARTS */
-.heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 24px;
-    animation: floatUp linear forwards;
-    pointer-events: none;
-}
+    @keyframes glow {
+        from { text-shadow: 0 0 10px #fff; }
+        to { text-shadow: 0 0 30px #ff0000; }
+    }
 
-@keyframes floatUp {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(-120vh); opacity: 0; }
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 10px white; }
-    to { text-shadow: 0 0 40px hotpink; }
-}
-
-@keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-}
-
-@keyframes open {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
+    @keyframes floatUp {
+        0% { transform: translateY(100vh); opacity: 1; }
+        100% { transform: translateY(-10vh); opacity: 0; }
+    }
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Happyyyy Birthdayyyy chikkaaaa💗💗💗</h1>
-</div>
-
-<!-- LETTER -->
-<div class="section">
-    <div class="envelope" onclick="openLetter()">
-        <span>Tap to open 💌</span>
-    </div>
-
-    <div class="letter" id="letter">
-        <div id="typewriter"></div>
+<div class="card">
+    <h1>Happyyyyy Birthdayyyy chikkkaaa💗</h1>
+    <div id="typewriter"></div>
+    <button id="loveBtn">I Love You 💖</button>
+    <div class="photos" id="photosContainer">
+        <img src="photo1.jpg" alt="Photo 1">
+        <img src="photo2.jpg" alt="Photo 2">
     </div>
 </div>
-
-<!-- MUSIC -->
-<audio id="music" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
-</audio>
 
 <script>
-/* TYPEWRITER MESSAGE */
-const message =
-"HAPPPYYY BIRTHDAYYY To the girl who makes my heart smile every single day(sometimes not....😝😝😝)💗\n\n" +
-"Happy Birthday, my happiness, my peace, my chikaaa(please don't mind if i call you "my" chikaa) 😝💗\n\n" +
-"I promise to stand by you, laugh with you, and love you a little more every day.\n\n" +
-"Even when things feel hard, I know we’ll figure everything out together 🥺❤️\n\n" +
-"Happyyyy Birthdayyyy once again 💗💗💗\n\n" +
-"I LOVE YOU 💗\n\n" +
-"— Yours jhagdalu, nikamma, traas and so on 😒💗";
+    // Typewriter message
+    const message =
+    "Happpyyy birthdayyyy to the girl who makes my heart smile every single day(sometimes...😝) 💗\n\n" +
+    "Happy Birthday 💕 You are my happiness, my peace, and my chikaaa(please don't mind if i called you my chikaa)😝😝\n\n" +
+    "I promise to stand by you, laugh with you, and love you a LITTLE more every day 💗💗\n\n" +
+    "I know things are getting too hard nowadays, but we’ll figure it out somehow… 🥺\n\n" +
+    "HAPPPYYY BIRTHDAYYY ONCE AGAINNN 💗💗💗\n\n" +
+    "I LOVE YOU 💗💗💗";
 
-let i = 0;
-const speed = 40;
+    let i = 0;
+    const speed = 40;
+    const typeDiv = document.getElementById("typewriter");
 
-function openLetter() {
-    document.getElementById("letter").style.display = "block";
-    document.getElementById("letter").scrollIntoView({ behavior: "smooth" });
-
-    document.getElementById("music").play(); // music starts after click
-    typeWriter();
-}
-
-/* TYPE EFFECT */
-function typeWriter() {
-    if (i < message.length) {
-        document.getElementById("typewriter").innerHTML +=
-            message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
+    function typeWriter() {
+        if (i < message.length) {
+            typeDiv.innerHTML += message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
     }
-}
 
-/* FLOATING HEARTS */
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerText = "💗";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (Math.random() * 20 + 20) + "px";
-    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 7000);
-}
+    typeWriter();
 
-setInterval(createHeart, 500);
+    // Floating hearts
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 300);
+
+    // Show photos on button click
+    const loveBtn = document.getElementById("loveBtn");
+    const photosContainer = document.getElementById("photosContainer");
+
+    loveBtn.addEventListener("click", () => {
+        photosContainer.style.display = "block";
+        loveBtn.style.display = "none"; // hide button after clicking
+    });
 </script>
 
 </body>
