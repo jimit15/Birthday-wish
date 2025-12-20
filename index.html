@@ -14,28 +14,55 @@
         font-family: 'Poppins', sans-serif;
         overflow: hidden;
         color: white;
+        text-align: center;
     }
 
     .card {
-        text-align: center;
         background: rgba(255, 255, 255, 0.15);
         padding: 40px;
         border-radius: 20px;
         backdrop-filter: blur(10px);
-        animation: popIn 1.5s ease;
-        max-width: 500px;
+        max-width: 600px;
         z-index: 2;
     }
 
     h1 {
         font-size: 3rem;
+        margin-bottom: 20px;
         animation: glow 2s infinite alternate;
     }
 
     #typewriter {
         font-size: 1.3rem;
-        margin-top: 20px;
         min-height: 120px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #ff5e7e;
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    .photos {
+        display: none;
+        margin-top: 20px;
+    }
+
+    .photos img {
+        width: 45%;
+        margin: 10px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
 
     .heart {
@@ -43,70 +70,6 @@
         color: red;
         font-size: 20px;
         animation: floatUp 5s linear infinite;
-    }
-
-    /* JUMPSCARE OVERLAY */
-    #jumpscare {
-        position: fixed;
-        inset: 0;
-        background: black;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        animation: shake 0.3s infinite;
-    }
-
-    #jumpscare video {
-        width: 95vw;
-        max-width: 600px;
-        border-radius: 10px;
-        box-shadow: 0 0 50px red;
-    }
-
-    /* Gallery Overlay */
-    #galleryOverlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.9);
-        display: none;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        overflow-y: auto;
-        z-index: 9999;
-        padding: 20px;
-    }
-
-    .galleryPhoto {
-        width: 250px;
-        margin: 10px;
-        border-radius: 15px;
-        box-shadow: 0 0 25px pink;
-        transform: scale(0);
-        transition: transform 0.5s;
-    }
-
-    #loveBtn {
-        padding: 15px 25px;
-        font-size: 1.3rem;
-        border-radius: 10px;
-        border: none;
-        background: pink;
-        color: white;
-        cursor: pointer;
-        box-shadow: 0 0 15px red;
-        transition: transform 0.2s;
-        margin-top: 20px;
-    }
-
-    #loveBtn:hover {
-        transform: scale(1.1);
-    }
-
-    @keyframes popIn {
-        from { transform: scale(0); opacity: 0; }
-        to { transform: scale(1); opacity: 1; }
     }
 
     @keyframes glow {
@@ -118,43 +81,25 @@
         0% { transform: translateY(100vh); opacity: 1; }
         100% { transform: translateY(-10vh); opacity: 0; }
     }
-
-    @keyframes shake {
-        0% { transform: translate(0); }
-        25% { transform: translate(-10px, 10px); }
-        50% { transform: translate(10px, -10px); }
-        75% { transform: translate(-10px, -10px); }
-        100% { transform: translate(0); }
-    }
 </style>
 </head>
-
 <body>
 
 <div class="card">
-    <h1>Happyyyy Birthdayyyy chikaaaaa💗💗💗</h1>
+    <h1>Happyyyyy Birthdayyyy chikkkaaa💗</h1>
     <div id="typewriter"></div>
-    <p style="margin-top:20px;">— Yours jhagdalu, nikamma, traas and so on...... 😒💗</p>
-    <button id="loveBtn">I LOVE YOU 💗</button>
-</div>
-
-<!-- Jumpscare overlay -->
-<div id="jumpscare">
-    <video id="scareVideo" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
-</div>
-
-<!-- Gallery Overlay -->
-<div id="galleryOverlay">
-    <img src="photo1.jpg" class="galleryPhoto">
-    <img src="photo2.jpg" class="galleryPhoto">
-    <img src="photo3.jpg" class="galleryPhoto">
-    <img src="photo4.jpg" class="galleryPhoto">
+    <button id="loveBtn">I Love You 💖</button>
+    <div class="photos" id="photosContainer">
+        <img src="photo1.jpg" alt="Photo 1">
+        <img src="photo2.jpg" alt="Photo 2">
+    </div>
 </div>
 
 <script>
+    // Typewriter message
     const message =
     "To the girl who makes my heart smile every single day... 💗\n\n" +
-    "Happy Birthday 💕 You are my happiness, my peace, and my chikaaa (please don't mind 😝😝)\n\n" +
+    "Happy Birthday 💕 You are my happiness, my peace, and my chikaaa(please don't mind if i called you my chikaa)😝😝\n\n" +
     "I promise to stand by you, laugh with you, and love you a LITTLE more every day 💗💗\n\n" +
     "I know things are getting too hard nowadays, but we’ll figure it out somehow… 🥺\n\n" +
     "HAPPPYYY BIRTHDAYYY ONCE AGAINNN 💗💗💗\n\n" +
@@ -169,19 +114,12 @@
             typeDiv.innerHTML += message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
             i++;
             setTimeout(typeWriter, speed);
-        } else {
-            // Show jumpscare
-            setTimeout(() => {
-                const overlay = document.getElementById("jumpscare");
-                const video = document.getElementById("scareVideo");
-                overlay.style.display = "flex";
-                video.play();
-            }, 800);
         }
     }
 
     typeWriter();
 
+    // Floating hearts
     function createHeart() {
         const heart = document.createElement("div");
         heart.className = "heart";
@@ -194,27 +132,20 @@
 
     setInterval(createHeart, 300);
 
-    // LOVE BUTTON LOGIC
+    // Show photos on button click
     const loveBtn = document.getElementById("loveBtn");
-    const galleryOverlay = document.getElementById("galleryOverlay");
+    const photosContainer = document.getElementById("photosContainer");
 
     loveBtn.addEventListener("click", () => {
-        galleryOverlay.style.display = "flex";
-
-        const photos = document.querySelectorAll(".galleryPhoto");
-        photos.forEach((photo, index) => {
-            setTimeout(() => {
-                photo.style.transform = "scale(1)";
-            }, index * 300);
-        });
-
-        // extra hearts
-        setInterval(createHeart, 300);
+        photosContainer.style.display = "block";
+        loveBtn.style.display = "none"; // hide button after clicking
     });
 </script>
 
 </body>
 </html>
+
+
 
 
 
