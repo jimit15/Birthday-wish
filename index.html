@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday ❤️</title>
+<title>Happy Birthday 💗</title>
 
 <style>
 body {
     margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ff7aa2, #ff9acb);
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff9acb);
     color: white;
     overflow-x: hidden;
 }
 
-/* Centered birthday heading */
+/* HERO */
 .hero {
     height: 100vh;
     display: flex;
@@ -25,65 +24,62 @@ body {
 
 .hero h1 {
     font-size: 3.5rem;
-    text-shadow: 0 0 30px rgba(255,255,255,0.6);
     animation: glow 2s infinite alternate;
 }
 
-/* Letter section */
+/* SECTION */
 .section {
     padding: 80px 20px;
     text-align: center;
 }
 
+/* ENVELOPE */
 .envelope {
-    width: 160px;
-    height: 110px;
+    width: 170px;
+    height: 120px;
     background: #ff4f7b;
-    margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 12px;
+    margin: auto;
     position: relative;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
     animation: bounce 2s infinite;
 }
 
 .envelope::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background: #ff6b91;
-    clip-path: polygon(0 0, 100% 0, 50% 50%);
+    clip-path: polygon(0 0, 100% 0, 50% 55%);
 }
 
 .envelope span {
     position: absolute;
     bottom: -40px;
     width: 100%;
-    text-align: center;
     font-size: 1.1rem;
 }
 
-/* Hidden letter */
+/* LETTER */
 .letter {
     max-width: 600px;
     margin: 50px auto 0;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.18);
     padding: 30px;
     border-radius: 20px;
     display: none;
     backdrop-filter: blur(10px);
-    animation: openLetter 1s ease forwards;
+    animation: open 1s ease forwards;
 }
 
-.letter p {
+#typewriter {
     font-size: 1.2rem;
     line-height: 1.7;
 }
 
-/* Floating hearts */
+/* FLOATING HEARTS */
 .heart {
     position: fixed;
     bottom: -20px;
@@ -93,14 +89,8 @@ body {
 }
 
 @keyframes floatUp {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-120vh) scale(1.5);
-        opacity: 0;
-    }
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-120vh); opacity: 0; }
 }
 
 @keyframes glow {
@@ -109,19 +99,13 @@ body {
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
-@keyframes openLetter {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+@keyframes open {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
 </style>
 </head>
@@ -130,56 +114,67 @@ body {
 
 <!-- HERO -->
 <div class="hero">
-    <h1>Happyyyy Birthdayyyy<br>Chikaaaaa 💗💗💗</h1>
+    <h1>Happyyyy Birthdayyyy chikkaaaa💗💗💗</h1>
 </div>
 
-<!-- LETTER SECTION -->
+<!-- LETTER -->
 <div class="section">
-    <div class="envelope" onclick="showLetter()">
+    <div class="envelope" onclick="openLetter()">
         <span>Tap to open 💌</span>
     </div>
 
     <div class="letter" id="letter">
-        <p>
-        To the girl who makes my heart smile every single day… 💗<br><br>
-
-        Happy Birthday, my happiness, my peace, my chikaaa 😝💗<br><br>
-
-        I promise to stand by you, laugh with you,
-        and love you a little more every single day.<br><br>
-
-        Even if things feel hard sometimes,
-        we’ll figure everything out together 🥺<br><br>
-
-        Happyyyy Birthdayyyy once again 💗💗💗<br><br>
-
-        — Yours jhagdalu, nikamma, traas and so on 😒💗
-        </p>
+        <div id="typewriter"></div>
     </div>
 </div>
 
+<!-- MUSIC -->
+<audio id="music" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+
 <script>
-function showLetter() {
-    const letter = document.getElementById("letter");
-    letter.style.display = "block";
-    letter.scrollIntoView({ behavior: "smooth" });
+/* TYPEWRITER MESSAGE */
+const message =
+"HAPPPYYY BIRTHDAYYY To the girl who makes my heart smile every single day(sometimes not....😝😝😝)💗\n\n" +
+"Happy Birthday, my happiness, my peace, my chikaaa(please don't mind if i call you "my" chikaa) 😝💗\n\n" +
+"I promise to stand by you, laugh with you, and love you a little more every day.\n\n" +
+"Even when things feel hard, I know we’ll figure everything out together 🥺❤️\n\n" +
+"Happyyyy Birthdayyyy once again 💗💗💗\n\n" +
+"I LOVE YOU 💗\n\n" +
+"— Yours jhagdalu, nikamma, traas and so on 😒💗";
+
+let i = 0;
+const speed = 40;
+
+function openLetter() {
+    document.getElementById("letter").style.display = "block";
+    document.getElementById("letter").scrollIntoView({ behavior: "smooth" });
+
+    document.getElementById("music").play(); // music starts after click
+    typeWriter();
 }
 
-/* Floating hearts generator */
+/* TYPE EFFECT */
+function typeWriter() {
+    if (i < message.length) {
+        document.getElementById("typewriter").innerHTML +=
+            message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+/* FLOATING HEARTS */
 function createHeart() {
     const heart = document.createElement("div");
-    heart.classList.add("heart");
+    heart.className = "heart";
     heart.innerText = "💗";
-
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
     heart.style.fontSize = (Math.random() * 20 + 20) + "px";
-
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
     document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 7000);
+    setTimeout(() => heart.remove(), 7000);
 }
 
 setInterval(createHeart, 500);
@@ -187,6 +182,8 @@ setInterval(createHeart, 500);
 
 </body>
 </html>
+
+
 
 
 
