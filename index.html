@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday💗💗💗</title>
+<title>Happy Birthday❤️</title>
 
 <style>
     body {
@@ -24,7 +24,7 @@
         border-radius: 20px;
         backdrop-filter: blur(10px);
         animation: popIn 1.5s ease;
-        max-width: 520px;
+        max-width: 500px;
         z-index: 2;
     }
 
@@ -36,21 +36,20 @@
     #typewriter {
         font-size: 1.3rem;
         margin-top: 20px;
-        min-height: 140px;
+        min-height: 120px;
     }
 
     #loveBtn {
         display: none;
-        margin-top: 25px;
-        padding: 14px 28px;
-        font-size: 1.2rem;
-        border: none;
-        border-radius: 30px;
+        margin-top: 20px;
+        padding: 12px 24px;
+        font-size: 1.1rem;
         background: #ff3366;
+        border: none;
         color: white;
+        border-radius: 30px;
         cursor: pointer;
-        box-shadow: 0 0 20px rgba(255,255,255,0.5);
-        animation: pulse 1.2s infinite;
+        animation: pulse 1.3s infinite;
     }
 
     #loveBtn:hover {
@@ -60,11 +59,9 @@
     .heart {
         position: absolute;
         color: red;
-        font-size: 20px;
         animation: floatUp 5s linear infinite;
     }
 
-    /* JUMPSCARE OVERLAY */
     #jumpscare {
         position: fixed;
         inset: 0;
@@ -73,42 +70,11 @@
         justify-content: center;
         align-items: center;
         z-index: 9999;
-        animation: shake 0.25s infinite;
     }
 
     #jumpscare video {
         width: 95vw;
         max-width: 600px;
-        box-shadow: 0 0 50px red;
-    }
-
-    @keyframes popIn {
-        from { transform: scale(0); opacity: 0; }
-        to { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes glow {
-        from { text-shadow: 0 0 10px #fff; }
-        to { text-shadow: 0 0 30px #ff0000; }
-    }
-
-    @keyframes floatUp {
-        0% { transform: translateY(100vh); opacity: 1; }
-        100% { transform: translateY(-10vh); opacity: 0; }
-    }
-
-    @keyframes shake {
-        0% { transform: translate(0); }
-        25% { transform: translate(-12px, 12px); }
-        50% { transform: translate(12px, -12px); }
-        75% { transform: translate(-12px, -12px); }
-        100% { transform: translate(0); }
-    }
-
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.08); }
-        100% { transform: scale(1); }
     }
 </style>
 </head>
@@ -116,30 +82,25 @@
 <body>
 
 <div class="card">
-    <h1>Happyyyy Birthdayyyy chikkaaaaa💗💗💗💗</h1>
+    <h1>Happpyyy Birthdayyy chiikkkaaa💗💗💗</h1>
     <div id="typewriter"></div>
-
-    <!-- FAKE LOVE BUTTON -->
     <button id="loveBtn" onclick="triggerScare()">I LOVE YOU 💗</button>
-
-    <p style="margin-top:20px;">— Yours headache, Yours jhagdalu, Yours nikamma and so on...... 😒💗</p>
 </div>
 
-<!-- JUMPSCARE -->
 <div id="jumpscare">
-    <video id="scareVideo" muted playsinline>
-        <!-- Replace with your own scary MP4 if you want -->
-        <source src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
+    <video id="scareVideo" controls>
+        <source src="scare.mp4" type="video/mp4">
+        Your browser doesn’t support HTML5 video.
     </video>
 </div>
 
 <script>
     const message =
-    "HAPPYY BIRTHDAYYY To the girl who makes my heart smile every single day... 💗\n\n" +
-    "Happy Birthday 💕 You are my happiness, my peace, and my CHIKKAAAA(don't mind if i called you my chikaa) 🥹🥹\n\n" +
-    "I promise to stand by you, laugh with you, and love you a LITTLE more every day 💗💗\n\n" +
-    "I know things are getting too hard nowadays, but we’ll figure it out somehow 🥺\n\n" +
-    "HAPPPYYY BIRTHDAYYY ONCE AGAINNN💗💗💗\n\n" +
+    "To the girl who makes my heart smile every single day... 💗\n\n" +
+    "Happy Birthday 🎂 You are my happiness, my peace, and my chikkaaa(please don't mind if i call you my chikaa)😝😝\n\n" +
+    "I promise to stand by you, laugh with you, and love you more every day 💗💗\n\n" +
+    "I know things are tough, but we’ll figure it out 🥺\n\n" +
+    "HAPPPYYY BIRTHDAYYY ONCE AGAINNN💗💗💗 \n\n" +
     "I LOVE YOU 💗💗💗";
 
     let i = 0;
@@ -153,7 +114,6 @@
             i++;
             setTimeout(typeWriter, speed);
         } else {
-            // Show fake love button at the end
             setTimeout(() => {
                 loveBtn.style.display = "inline-block";
             }, 800);
@@ -163,10 +123,9 @@
     typeWriter();
 
     function triggerScare() {
-        const overlay = document.getElementById("jumpscare");
+        document.getElementById("jumpscare").style.display = "flex";
         const video = document.getElementById("scareVideo");
-        overlay.style.display = "flex";
-        video.play(); // autoplay works because muted
+        video.play(); // sound included
     }
 
     function createHeart() {
@@ -184,6 +143,8 @@
 
 </body>
 </html>
+
+
 
 
 
