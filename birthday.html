@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday ❤️</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+        color: white;
+    }
+
+    .card {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        animation: popIn 1.5s ease;
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        animation: glow 2s infinite alternate;
+    }
+
+    #typewriter {
+        font-size: 1.3rem;
+        margin-top: 20px;
+        min-height: 80px;
+    }
+
+    .heart {
+        position: absolute;
+        color: red;
+        font-size: 20px;
+        animation: floatUp 5s linear infinite;
+    }
+
+    @keyframes popIn {
+        0% { transform: scale(0); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 10px #fff; }
+        to { text-shadow: 0 0 30px #ff0000; }
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(100vh);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-10vh);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Happy Birthday ❤️</h1>
+    <div id="typewriter"></div>
+    <p style="margin-top:20px;">— Yours forever 💕</p>
+</div>
+
+<script>
+    const message = 
+    "To the girl who makes my heart smile every single day... 💖\n\n" +
+    "Happy Birthday, my love. You are my happiness, my peace, and my biggest blessing.\n\n" +
+    "I promise to stand by you, laugh with you, and love you a little more every day ❤️";
+
+    let i = 0;
+    const speed = 40;
+    const typeDiv = document.getElementById("typewriter");
+
+    function typeWriter() {
+        if (i < message.length) {
+            typeDiv.innerHTML += message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    typeWriter();
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
