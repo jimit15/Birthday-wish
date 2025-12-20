@@ -25,6 +25,29 @@
         animation: popIn 1.5s ease;
         max-width: 500px;
     }
+.msg-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.horror-gif {
+    width: 220px;   /* BIG GIF 😈 */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    animation: shake 1.2s infinite;
+}
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-4px, 4px); }
+    50% { transform: translate(4px, -4px); }
+    75% { transform: translate(-4px, -4px); }
+    100% { transform: translate(0); }
+}
+
 
     h1 {
         font-size: 3rem;
@@ -70,7 +93,14 @@
 
 <div class="card">
     <h1>Happyyy Birthdayyy DRASHTIIII❤️</h1>
+    <div class="msg-wrapper">
     <div id="typewriter"></div>
+    <img 
+        src="https://media.giphy.com/media/14ut8PhnIwzros/giphy.gif"
+        class="horror-gif"
+        alt="boo">
+</div>
+
     <p style="margin-top:20px;">— Yours HEADACHE,NIKAMMA,NALAYAK,LALLU,JHAAHIL,AAVARA AND SO ON......💗</p>
 
 </div>
@@ -117,6 +147,7 @@
 
 </body>
 </html>
+
 
 
 
