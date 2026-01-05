@@ -429,7 +429,36 @@ document.addEventListener('DOMContentLoaded', function() {
     highlightNavOnScroll();
     animateOnScroll();
 });
+// ... Your existing code ...
 
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    updateStoreStatus();
+    displayFrames();
+    highlightNavOnScroll();
+    animateOnScroll();
+});
+
+// ===== ADD LOCATION FUNCTIONS HERE =====
+// ... Paste all location functions here ...
+
+// Then ADD this to call the location function:
+document.addEventListener('DOMContentLoaded', function() {
+    // Your existing initialization
+    updateStoreStatus();
+    displayFrames();
+    highlightNavOnScroll();
+    animateOnScroll();
+    
+    // ADD THIS LINE to call location function
+    getUserLocation();
+    
+    // Update location button (if you have one)
+    const updateLocationBtn = document.getElementById('updateLocation');
+    if (updateLocationBtn) {
+        updateLocationBtn.addEventListener('click', getUserLocation);
+    }
+});
 // Book Eye Test Button Action
 document.querySelectorAll('.btn-primary[href="#contact"]').forEach(button => {
     button.addEventListener('click', (e) => {
@@ -452,5 +481,147 @@ document.querySelectorAll('.btn-primary[href="#contact"]').forEach(button => {
             }
         }
     });
+})
+// ===== STORE LOCATION FUNCTIONS =====
+
+// Get user's current location
+function getUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                const userLat = position.coords.latitude;
+                const userLon = position.coords.longitude;
+                
+                // Calculate distance to store
+                const distance = calculateDistance(
+                    userLat, userLon, 
+                    23.0505735, 72.6699662
+                );
+                
+                // Display user location with distance
+                displayUserLocation(userLat, userLon, distance);
+                
+                // Store for later use
+                localStorage.setItem('userLocation', JSON.stringify({
+                    lat: userLat,
+                    lon: userLon,
+                    timestamp: Date.now()
+                }));
+            },
+            function(error) {
+                console.error("Error getting location:", error);
+                // Fallback to store location
+                displayStoreLocation();
+            }
+        );
+    } else {
+        console.log("Geolocation not supported");
+        displayStoreLocation();
+    }
+}
+
+// Calculate distance between two coordinates (in km)
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Earth's radius in km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = 
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+        Math.sin(dLon/2) * Math.sin(dLon/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    const distance = R * c;
+    return Math.round(distance * 100) / 100; // Round to 2 decimals
+}
+
+// Display user location with distance to store
+function displayUserLocation(lat, lon, distance) {
+    const locationElement = document.getElementById('storeLocation');
+    
+    if (locationElement) {
+        locationElement.innerHTML = `
+            <div class="location-info">
+                <h4>📍 Your Location</h4>
+                <p><strong>Your Coordinates:</strong> ${lat.toFixed(6)}, ${lon.toFixed(6)}</p>
+                <p><strong>Distance to Store:</strong> ${distance} km</p>
+                <a href="https://maps.google.com/?q=${lat},${lon}" 
+                   target="_blank" class="map-link">
+                   View Your Location
+                </a>
+            </div>
+        `;
+    }
+}
+
+// Display store location (hardcoded)
+function displayStoreLocation() {
+    const storeLat = 23.0505735;
+    const storeLon = 72.6699662;
+    const storeAddress = "27, Murtidham Park, Nikol, Ahmedabad";
+    
+    const locationElement = document.getElementById('storeLocation');
+    
+    if (locationElement) {
+        locationElement.innerHTML = `
+            <div class="location-info">
+                <h4>📍 Our Store Location</h4>
+                <p><strong>Address:</strong> ${storeAddress}</p>
+                <p><strong>Coordinates:</strong> ${storeLat}, ${storeLon}</p>
+                <div class="location-buttons">
+                    <a href="https://maps.google.com/?q=${storeLat},${storeLon}" 
+                       target="_blank" class="map-link">
+                       🗺️ View on Google Maps
+                    </a>
+                    <a href="https://maps.app.goo.gl/6uK4AEnSwHb2jwLi8" 
+                       target="_blank" class="map-link">
+                       📍 Get Directions
+                    </a>
+                    <button onclick="getUserLocation()" class="map-link">
+                       📍 Find My Location
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Initialize location on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Your existing initialization code
+    updateStoreStatus();
+    displayFrames();
+    highlightNavOnScroll();
+    animateOnScroll();
+    
+    // Initialize store location display
+    displayStoreLocation();
+    
+    // Add location button to contact section
+    addLocationButton();
 });
+
+// Add location button dynamically
+function addLocationButton() {
+    const contactSection = document.getElementById('contact');
+    if (contactSection && !document.getElementById('locationBtn')) {
+        const locationBtn = document.createElement('button');
+        locationBtn.id = 'locationBtn';
+        locationBtn.className = 'btn-primary';
+        locationBtn.innerHTML = '📍 Find Store Location';
+        locationBtn.style.marginTop = '10px';
+        locationBtn.onclick = function() {
+            getUserLocation();
+            // Scroll to location display
+            const locationElement = document.getElementById('storeLocation');
+            if (locationElement) {
+                locationElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+        
+        // Add to contact section
+        contactSection.appendChild(locationBtn);
+    }
+}
+// ===== END OF LOCATION FUNCTIONS =====
+
 
