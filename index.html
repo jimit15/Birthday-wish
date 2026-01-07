@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Screen (Add this) -->
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- Scroll Progress Bar (Add this) -->
+    <div class="scroll-progress"></div>
+    
     <!-- Header Section -->
     <header>
         <div class="container">
@@ -20,12 +28,12 @@
                         <i class="fas fa-glasses"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>Suraj <span>Chashma Ghar</span></h1>
+                        <h1 class="animate-fade-in">Suraj <span>Chashma Ghar</span></h1>
                         <p>Premium Eyewear & Eye Care Since 2012</p>
                     </div>
                 </div>
                 
-                <div class="rating-badge">
+                <div class="rating-badge animate-slide-right">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -40,17 +48,17 @@
                 
                 <nav class="desktop-nav">
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#frames">Frames</a></li>
-                        <li><a href="#testimonials">Reviews</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#frames" class="nav-link">Frames</a></li>
+                        <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
                 
                 <div class="header-cta">
-                    <a href="tel:7069343403" class="call-btn">
+                    <a href="tel:7069343403" class="call-btn animate-scale">
                         <i class="fas fa-phone"></i> Call Now
                     </a>
                     <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -103,28 +111,28 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h2>Vision Care with Style & Precision</h2>
-                    <p>Experience premium eyewear solutions with professional eye testing by certified optometrist at Suraj Chashma Ghar. Your trusted optical shop since 2012.</p>
-                    <div class="hero-btns">
+                    <h2 class="animate-slide-left">Vision Care with Style & Precision</h2>
+                    <p class="animate-slide-left">Experience premium eyewear solutions with professional eye testing by certified optometrist at Suraj Chashma Ghar. Your trusted optical shop since 2012.</p>
+                    <div class="hero-btns animate-slide-left">
                         <a href="#contact" class="btn-primary">Book Eye Test</a>
                         <a href="#frames" class="btn-secondary">View Frames</a>
                     </div>
                     <div class="hero-features">
-                        <div class="feature">
+                        <div class="feature animate-scale" style="--animation-order: 1">
                             <i class="fas fa-user-md"></i>
                             <span>Certified Optometrist</span>
                         </div>
-                        <div class="feature">
+                        <div class="feature animate-scale" style="--animation-order: 2">
                             <i class="fas fa-award"></i>
                             <span>12+ Years Experience</span>
                         </div>
-                        <div class="feature">
+                        <div class="feature animate-scale" style="--animation-order: 3">
                             <i class="fas fa-rupee-sign"></i>
                             <span>Affordable Prices</span>
                         </div>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image animate-slide-right">
                     <img src="https://images.unsplash.com/photo-1583292650899-5c7c36f921c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Premium Eyewear Collection">
                 </div>
             </div>
@@ -134,53 +142,53 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-fade-in">
                 <h2>About Suraj Chashma Ghar</h2>
                 <p>Serving Nikol community with quality eyewear since 2012</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Trusted Optical Shop Since 2012</h3>
-                    <p>Established in 2012 by <strong>Kathan Shah</strong>, Suraj Chashma Ghar has been the trusted optical destination in Nikol, Ahmedabad. With professional eye testing by certified optometrist, we provide personalized vision solutions.</p>
+                    <h3 class="animate-slide-left">Trusted Optical Shop Since 2012</h3>
+                    <p class="animate-slide-left">Established in 2012 by <strong>Kathan Shah</strong>, Suraj Chashma Ghar has been the trusted optical destination in Nikol, Ahmedabad. With professional eye testing by certified optometrist, we provide personalized vision solutions.</p>
                     
                     <div class="about-stats">
-                        <div class="stat">
+                        <div class="stat animate-scale" style="--stat-index: 1">
                             <div class="stat-number">12+</div>
                             <div class="stat-label">Years Experience</div>
                         </div>
-                        <div class="stat">
+                        <div class="stat animate-scale" style="--stat-index: 2">
                             <div class="stat-number">37+</div>
                             <div class="stat-label">Happy Customers</div>
                         </div>
-                        <div class="stat">
+                        <div class="stat animate-scale" style="--stat-index: 3">
                             <div class="stat-number">4.9</div>
                             <div class="stat-label">Star Rating</div>
                         </div>
                     </div>
                     
                     <div class="features">
-                        <div class="feature">
+                        <div class="feature animate-slide-left" style="--animation-order: 1">
                             <i class="fas fa-eye"></i>
                             <div>
                                 <h4>Advanced Eye Testing</h4>
                                 <p>Professional equipment for accurate prescription</p>
                             </div>
                         </div>
-                        <div class="feature">
+                        <div class="feature animate-slide-left" style="--animation-order: 2">
                             <i class="fas fa-glasses"></i>
                             <div>
                                 <h4>Premium Frames</h4>
                                 <p>Wide selection of latest designs</p>
                             </div>
                         </div>
-                        <div class="feature">
+                        <div class="feature animate-slide-left" style="--animation-order: 3">
                             <i class="fas fa-tags"></i>
                             <div>
                                 <h4>Best Prices</h4>
                                 <p>Quality eyewear at affordable rates</p>
                             </div>
                         </div>
-                        <div class="feature">
+                        <div class="feature animate-slide-left" style="--animation-order: 4">
                             <i class="fas fa-user-friends"></i>
                             <div>
                                 <h4>Expert Guidance</h4>
@@ -189,7 +197,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
+                <div class="about-image animate-slide-right">
                     <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional Eye Testing">
                 </div>
             </div>
@@ -199,12 +207,12 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-fade-in">
                 <h2>Our Services</h2>
                 <p>Comprehensive eye care solutions for all ages</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card animate-scale" style="--card-index: 1">
                     <div class="service-icon">
                         <i class="fas fa-eye"></i>
                     </div>
@@ -215,7 +223,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate-scale" style="--card-index: 2">
                     <div class="service-icon">
                         <i class="fas fa-glasses"></i>
                     </div>
@@ -226,7 +234,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate-scale" style="--card-index: 3">
                     <div class="service-icon">
                         <i class="fas fa-sun"></i>
                     </div>
@@ -237,7 +245,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate-scale" style="--card-index: 4">
                     <div class="service-icon">
                         <i class="fas fa-procedures"></i>
                     </div>
@@ -248,7 +256,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate-scale" style="--card-index: 5">
                     <div class="service-icon">
                         <i class="fas fa-child"></i>
                     </div>
@@ -259,7 +267,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate-scale" style="--card-index: 6">
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
                     </div>
@@ -276,34 +284,34 @@
     <!-- Frames Section -->
     <section class="frames" id="frames">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-fade-in">
                 <h2>Our Frame Collection</h2>
                 <p>Stylish frames for every personality and occasion</p>
             </div>
             
             <div class="frame-categories">
-                <div class="category-card">
+                <div class="category-card animate-slide-bottom" style="--category-index: 1">
                     <div class="category-icon">
                         <i class="fas fa-male"></i>
                     </div>
                     <h3>Men's Frames</h3>
                     <p>Classic, modern & professional styles</p>
                 </div>
-                <div class="category-card">
+                <div class="category-card animate-slide-bottom" style="--category-index: 2">
                     <div class="category-icon">
                         <i class="fas fa-female"></i>
                     </div>
                     <h3>Women's Frames</h3>
                     <p>Trendy, elegant & fashionable designs</p>
                 </div>
-                <div class="category-card">
+                <div class="category-card animate-slide-bottom" style="--category-index: 3">
                     <div class="category-icon">
                         <i class="fas fa-child"></i>
                     </div>
                     <h3>Kids Frames</h3>
                     <p>Durable, colorful & comfortable designs</p>
                 </div>
-                <div class="category-card">
+                <div class="category-card animate-slide-bottom" style="--category-index: 4">
                     <div class="category-icon">
                         <i class="fas fa-sun"></i>
                     </div>
@@ -313,11 +321,11 @@
             </div>
 
             <div class="product-filters">
-                <button class="filter-btn active" data-filter="all">All Frames</button>
-                <button class="filter-btn" data-filter="men">Men's</button>
-                <button class="filter-btn" data-filter="women">Women's</button>
-                <button class="filter-btn" data-filter="kids">Kids</button>
-                <button class="filter-btn" data-filter="sunglasses">Sunglasses</button>
+                <button class="filter-btn active animate-scale" style="--btn-index: 1" data-filter="all">All Frames</button>
+                <button class="filter-btn animate-scale" style="--btn-index: 2" data-filter="men">Men's</button>
+                <button class="filter-btn animate-scale" style="--btn-index: 3" data-filter="women">Women's</button>
+                <button class="filter-btn animate-scale" style="--btn-index: 4" data-filter="kids">Kids</button>
+                <button class="filter-btn animate-scale" style="--btn-index: 5" data-filter="sunglasses">Sunglasses</button>
             </div>
             
             <div class="frames-grid">
@@ -325,7 +333,7 @@
             </div>
             
             <div class="view-more">
-                <a href="#contact" class="btn-primary">Visit Store to See Complete Collection</a>
+                <a href="#contact" class="btn-primary animate-pulse-custom">Visit Store to See Complete Collection</a>
             </div>
         </div>
     </section>
@@ -333,12 +341,12 @@
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-fade-in">
                 <h2>Customer Reviews</h2>
                 <p>What our valued customers say about us</p>
             </div>
             <div class="testimonials-slider">
-                <div class="testimonial-card">
+                <div class="testimonial-card animate-slide-bottom" style="--testimonial-index: 1">
                     <div class="testimonial-header">
                         <div class="customer-info">
                             <h4>Rajesh Patel</h4>
@@ -355,7 +363,7 @@
                     <p>"I had a wonderful experience visiting the optometrist. The staff was welcoming, and the eye check-up was thorough and professional. The shop was well-organized with a great selection of frames and lenses."</p>
                 </div>
                 
-                <div class="testimonial-card">
+                <div class="testimonial-card animate-slide-bottom" style="--testimonial-index: 2">
                     <div class="testimonial-header">
                         <div class="customer-info">
                             <h4>Priya Sharma</h4>
@@ -372,7 +380,7 @@
                     <p>"It was worth a visit to get a clear understanding of the eye related issue. I also got my shades updated with a better variety based on their valued suggestion. Thank you."</p>
                 </div>
                 
-                <div class="testimonial-card">
+                <div class="testimonial-card animate-slide-bottom" style="--testimonial-index: 3">
                     <div class="testimonial-header">
                         <div class="customer-info">
                             <h4>Mohammed Khan</h4>
@@ -395,13 +403,13 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-fade-in">
                 <h2>Visit Our Store</h2>
                 <p>We're here to help you see better and look great</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-card">
+                    <div class="contact-card animate-slide-left" style="--contact-index: 1">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
@@ -414,7 +422,7 @@
                         </div>
                     </div>
                     
-                    <div class="contact-card">
+                    <div class="contact-card animate-slide-left" style="--contact-index: 2">
                         <div class="contact-icon">
                             <i class="fas fa-clock"></i>
                         </div>
@@ -423,11 +431,11 @@
                             <p><strong>Monday - Saturday:</strong> 9:00 AM - 9:00 PM</p>
                             <p><strong>Sunday:</strong> 9:00 AM - 7:00 PM</p>
                             <p><strong>Lunch Break:</strong> 1:00 PM - 2:00 PM (Daily)</p>
-                            <p class="status" id="storeStatus">Checking current status...</p>
+                            <p class="status animate-glow" id="storeStatus">Checking current status...</p>
                         </div>
                     </div>
                     
-                    <div class="contact-card">
+                    <div class="contact-card animate-slide-left" style="--contact-index: 3">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
@@ -439,7 +447,7 @@
                         </div>
                     </div>
                     
-                    <div class="contact-card">
+                    <div class="contact-card animate-slide-left" style="--contact-index: 4">
                         <div class="contact-icon">
                             <i class="fas fa-wallet"></i>
                         </div>
@@ -453,7 +461,7 @@
                 </div>
                 
                 <div class="contact-map">
-                    <div class="map-container">
+                    <div class="map-container animate-slide-right">
                         <h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
                         <div class="map-frame">
                             <iframe 
@@ -485,7 +493,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-section animate-fade-in">
                     <div class="logo">
                         <div class="logo-icon">
                             <i class="fas fa-glasses"></i>
@@ -497,22 +505,22 @@
                     </div>
                     <p class="footer-description">Your trusted optical shop in Nikol, Ahmedabad offering premium eyewear and professional eye care services by certified optometrist for over 12 years.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/1jQUBsT28T/" target="_blank" title="Facebook">
+                        <a href="https://www.facebook.com/share/1jQUBsT28T/" target="_blank" title="Facebook" style="--social-index: 1">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="https://www.instagram.com/suraj_chashma_ghar?igsh=b3B0OXJoY2Yyd3Jk" target="_blank" title="Instagram">
+                        <a href="https://www.instagram.com/suraj_chashma_ghar?igsh=b3B0OXJoY2Yyd3Jk" target="_blank" title="Instagram" style="--social-index: 2">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/917069343403" target="_blank" title="WhatsApp">
+                        <a href="https://wa.me/917069343403" target="_blank" title="WhatsApp" style="--social-index: 3">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="https://youtube.com/@kathanshah56?si=gy3ou2pSTDFUp84j" target="_blank" title="YouTube">
+                        <a href="https://youtube.com/@kathanshah56?si=gy3ou2pSTDFUp84j" target="_blank" title="YouTube" style="--social-index: 4">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-section animate-fade-in">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -523,7 +531,7 @@
                     </ul>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-section animate-fade-in">
                     <h4>Our Services</h4>
                     <ul>
                         <li><a href="#services">Eye Testing</a></li>
@@ -534,7 +542,7 @@
                     </ul>
                 </div>
                 
-                <div class="footer-section">
+                <div class="footer-section animate-fade-in">
                     <h4>Contact Info</h4>
                     <ul class="contact-info">
                         <li><i class="fas fa-map-marker-alt"></i> Nikol, Ahmedabad - 382350</li>
@@ -545,7 +553,7 @@
                 </div>
             </div>
             
-            <div class="footer-bottom">
+            <div class="footer-bottom animate-fade-in">
                 <p>&copy; 2012-2023 Suraj Chashma Ghar. All rights reserved. | Owner: Kathan Shah</p>
                 <p>Pincode: 382350 | Serving Nikol since 2012</p>
             </div>
@@ -554,7 +562,7 @@
 
     <!-- Floating Action Buttons -->
     <div class="floating-buttons">
-        <a href="https://wa.me/917069343403" class="float-btn whatsapp" target="_blank" title="WhatsApp">
+        <a href="https://wa.me/917069343403" class="float-btn whatsapp animate-pulse-custom" target="_blank" title="WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
         <a href="tel:7069343403" class="float-btn call" title="Call Now">
@@ -575,6 +583,7 @@
     <script src="main.js"></script>
 </body>
 </html>
+
 
 
 
