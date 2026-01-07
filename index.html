@@ -4,585 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suraj Chashma Ghar | Premium Eyewear & Professional Eye Testing Since 2012</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- FontAwesome - CORRECTED LINK -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+    
+    <!-- Google Fonts - CORRECTED LINK -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Link - MAKE SURE THIS IS CORRECT -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Force CSS to reload -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Immediate CSS for testing -->
+    <style>
+        /* Force immediate styles to confirm CSS is broken */
+        body { 
+            font-family: 'Poppins', sans-serif !important; 
+            background: #f5f7fa !important; 
+        }
+        
+        /* Test if this shows */
+        .test-badge {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            z-index: 9999;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
 </head>
 <body>
-    <!-- Loading Screen (Add this) -->
-    <div class="loading">
-        <div class="loading-spinner"></div>
+    <!-- Add test badge immediately -->
+    <div class="test-badge" onclick="testAnim()">
+        🎯 TEST ANIMATIONS
     </div>
     
-    <!-- Scroll Progress Bar (Add this) -->
-    <div class="scroll-progress"></div>
+    <!-- Your existing HTML content goes here -->
+    <!-- ... rest of your HTML ... -->
     
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="header-container">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-glasses"></i>
-                    </div>
-                    <div class="logo-text">
-                        <h1 class="animate-fade-in">Suraj <span>Chashma Ghar</span></h1>
-                        <p>Premium Eyewear & Eye Care Since 2012</p>
-                    </div>
-                </div>
-                
-                <div class="rating-badge animate-slide-right">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <div class="rating-text">
-                        4.9 <span>(37+ Reviews)</span>
-                    </div>
-                </div>
-                
-                <nav class="desktop-nav">
-                    <ul>
-                        <li><a href="#home" class="nav-link">Home</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#services" class="nav-link">Services</a></li>
-                        <li><a href="#frames" class="nav-link">Frames</a></li>
-                        <li><a href="#testimonials" class="nav-link">Reviews</a></li>
-                        <li><a href="#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                </nav>
-                
-                <div class="header-cta">
-                    <a href="tel:7069343403" class="call-btn animate-scale">
-                        <i class="fas fa-phone"></i> Call Now
-                    </a>
-                    <button class="mobile-menu-btn" id="mobileMenuBtn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <nav class="mobile-nav" id="mobileNav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#frames">Frames</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li>
-                    <a href="https://wa.me/917069343403" class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                </li>
-                <li>
-                    <a href="https://youtube.com/@kathanshah56?si=gy3ou2pSTDFUp84j" class="youtube-btn" target="_blank">
-                        <i class="fab fa-youtube"></i> YouTube
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/share/1jQUBsT28T/" class="facebook-btn" target="_blank">
-                        <i class="fab fa-facebook"></i> Facebook
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/suraj_chashma_ghar?igsh=b3B0OXJoY2Yyd3Jk" class="instagram-btn" target="_blank">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
-                </li>
-                <li>
-                    <a href="#feedback" class="feedback-btn">
-                        <i class="fas fa-star"></i> Give Feedback
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2 class="animate-slide-left">Vision Care with Style & Precision</h2>
-                    <p class="animate-slide-left">Experience premium eyewear solutions with professional eye testing by certified optometrist at Suraj Chashma Ghar. Your trusted optical shop since 2012.</p>
-                    <div class="hero-btns animate-slide-left">
-                        <a href="#contact" class="btn-primary">Book Eye Test</a>
-                        <a href="#frames" class="btn-secondary">View Frames</a>
-                    </div>
-                    <div class="hero-features">
-                        <div class="feature animate-scale" style="--animation-order: 1">
-                            <i class="fas fa-user-md"></i>
-                            <span>Certified Optometrist</span>
-                        </div>
-                        <div class="feature animate-scale" style="--animation-order: 2">
-                            <i class="fas fa-award"></i>
-                            <span>12+ Years Experience</span>
-                        </div>
-                        <div class="feature animate-scale" style="--animation-order: 3">
-                            <i class="fas fa-rupee-sign"></i>
-                            <span>Affordable Prices</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image animate-slide-right">
-                    <img src="https://images.unsplash.com/photo-1583292650899-5c7c36f921c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Premium Eyewear Collection">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header animate-fade-in">
-                <h2>About Suraj Chashma Ghar</h2>
-                <p>Serving Nikol community with quality eyewear since 2012</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3 class="animate-slide-left">Trusted Optical Shop Since 2012</h3>
-                    <p class="animate-slide-left">Established in 2012 by <strong>Kathan Shah</strong>, Suraj Chashma Ghar has been the trusted optical destination in Nikol, Ahmedabad. With professional eye testing by certified optometrist, we provide personalized vision solutions.</p>
-                    
-                    <div class="about-stats">
-                        <div class="stat animate-scale" style="--stat-index: 1">
-                            <div class="stat-number">12+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat animate-scale" style="--stat-index: 2">
-                            <div class="stat-number">37+</div>
-                            <div class="stat-label">Happy Customers</div>
-                        </div>
-                        <div class="stat animate-scale" style="--stat-index: 3">
-                            <div class="stat-number">4.9</div>
-                            <div class="stat-label">Star Rating</div>
-                        </div>
-                    </div>
-                    
-                    <div class="features">
-                        <div class="feature animate-slide-left" style="--animation-order: 1">
-                            <i class="fas fa-eye"></i>
-                            <div>
-                                <h4>Advanced Eye Testing</h4>
-                                <p>Professional equipment for accurate prescription</p>
-                            </div>
-                        </div>
-                        <div class="feature animate-slide-left" style="--animation-order: 2">
-                            <i class="fas fa-glasses"></i>
-                            <div>
-                                <h4>Premium Frames</h4>
-                                <p>Wide selection of latest designs</p>
-                            </div>
-                        </div>
-                        <div class="feature animate-slide-left" style="--animation-order: 3">
-                            <i class="fas fa-tags"></i>
-                            <div>
-                                <h4>Best Prices</h4>
-                                <p>Quality eyewear at affordable rates</p>
-                            </div>
-                        </div>
-                        <div class="feature animate-slide-left" style="--animation-order: 4">
-                            <i class="fas fa-user-friends"></i>
-                            <div>
-                                <h4>Expert Guidance</h4>
-                                <p>Personalized service for every customer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image animate-slide-right">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional Eye Testing">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header animate-fade-in">
-                <h2>Our Services</h2>
-                <p>Comprehensive eye care solutions for all ages</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card animate-scale" style="--card-index: 1">
-                    <div class="service-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Professional Eye Testing</h3>
-                    <p>Thorough eye examination using advanced equipment by certified optometrist for accurate prescription.</p>
-                    <div class="service-time">
-                        <i class="fas fa-clock"></i> 30-45 mins
-                    </div>
-                </div>
-                
-                <div class="service-card animate-scale" style="--card-index: 2">
-                    <div class="service-icon">
-                        <i class="fas fa-glasses"></i>
-                    </div>
-                    <h3>Prescription Glasses</h3>
-                    <p>Wide selection of frames and high-quality lenses tailored to your needs with expert advice.</p>
-                    <div class="service-time">
-                        <i class="fas fa-clock"></i> Ready in 1-2 hours
-                    </div>
-                </div>
-                
-                <div class="service-card animate-scale" style="--card-index: 3">
-                    <div class="service-icon">
-                        <i class="fas fa-sun"></i>
-                    </div>
-                    <h3>Sunglasses & UV Protection</h3>
-                    <p>Fashionable sunglasses with 100% UV protection for style and eye safety.</p>
-                    <div class="service-time">
-                        <i class="fas fa-clock"></i> Immediate
-                    </div>
-                </div>
-                
-                <div class="service-card animate-scale" style="--card-index: 4">
-                    <div class="service-icon">
-                        <i class="fas fa-procedures"></i>
-                    </div>
-                    <h3>Cataract Glasses</h3>
-                    <p>Specialized eyewear solutions for cataract patients with proper guidance.</p>
-                    <div class="service-time">
-                        <i class="fas fa-clock"></i> Consultation Required
-                    </div>
-                </div>
-                
-                <div class="service-card animate-scale" style="--card-index: 5">
-                    <div class="service-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3>Kids Eyewear</h3>
-                    <p>Durable, colorful & comfortable frames specially designed for children.</p>
-                    <div class="service-time">
-                        <i class="fas fa-clock"></i> 20-30 mins
-                    </div>
-                </div>
-                
-                <div class="service-card animate-scale" style="--card-index: 6">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Repairs & Adjustments</h3>
-                    <p>Expert frame adjustments, repairs, and lens replacements to extend eyewear life.</p>
-                    <div class="service-time">
-                        <i class="fas fa-clock"></i> 15-20 mins
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Frames Section -->
-    <section class="frames" id="frames">
-        <div class="container">
-            <div class="section-header animate-fade-in">
-                <h2>Our Frame Collection</h2>
-                <p>Stylish frames for every personality and occasion</p>
-            </div>
-            
-            <div class="frame-categories">
-                <div class="category-card animate-slide-bottom" style="--category-index: 1">
-                    <div class="category-icon">
-                        <i class="fas fa-male"></i>
-                    </div>
-                    <h3>Men's Frames</h3>
-                    <p>Classic, modern & professional styles</p>
-                </div>
-                <div class="category-card animate-slide-bottom" style="--category-index: 2">
-                    <div class="category-icon">
-                        <i class="fas fa-female"></i>
-                    </div>
-                    <h3>Women's Frames</h3>
-                    <p>Trendy, elegant & fashionable designs</p>
-                </div>
-                <div class="category-card animate-slide-bottom" style="--category-index: 3">
-                    <div class="category-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3>Kids Frames</h3>
-                    <p>Durable, colorful & comfortable designs</p>
-                </div>
-                <div class="category-card animate-slide-bottom" style="--category-index: 4">
-                    <div class="category-icon">
-                        <i class="fas fa-sun"></i>
-                    </div>
-                    <h3>Sunglasses</h3>
-                    <p>UV protection & stylish designs</p>
-                </div>
-            </div>
-
-            <div class="product-filters">
-                <button class="filter-btn active animate-scale" style="--btn-index: 1" data-filter="all">All Frames</button>
-                <button class="filter-btn animate-scale" style="--btn-index: 2" data-filter="men">Men's</button>
-                <button class="filter-btn animate-scale" style="--btn-index: 3" data-filter="women">Women's</button>
-                <button class="filter-btn animate-scale" style="--btn-index: 4" data-filter="kids">Kids</button>
-                <button class="filter-btn animate-scale" style="--btn-index: 5" data-filter="sunglasses">Sunglasses</button>
-            </div>
-            
-            <div class="frames-grid">
-                <!-- Frames will be loaded by JavaScript -->
-            </div>
-            
-            <div class="view-more">
-                <a href="#contact" class="btn-primary animate-pulse-custom">Visit Store to See Complete Collection</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header animate-fade-in">
-                <h2>Customer Reviews</h2>
-                <p>What our valued customers say about us</p>
-            </div>
-            <div class="testimonials-slider">
-                <div class="testimonial-card animate-slide-bottom" style="--testimonial-index: 1">
-                    <div class="testimonial-header">
-                        <div class="customer-info">
-                            <h4>Rajesh Patel</h4>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <span class="date">2 weeks ago</span>
-                    </div>
-                    <p>"I had a wonderful experience visiting the optometrist. The staff was welcoming, and the eye check-up was thorough and professional. The shop was well-organized with a great selection of frames and lenses."</p>
-                </div>
-                
-                <div class="testimonial-card animate-slide-bottom" style="--testimonial-index: 2">
-                    <div class="testimonial-header">
-                        <div class="customer-info">
-                            <h4>Priya Sharma</h4>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                        <span class="date">1 month ago</span>
-                    </div>
-                    <p>"It was worth a visit to get a clear understanding of the eye related issue. I also got my shades updated with a better variety based on their valued suggestion. Thank you."</p>
-                </div>
-                
-                <div class="testimonial-card animate-slide-bottom" style="--testimonial-index: 3">
-                    <div class="testimonial-header">
-                        <div class="customer-info">
-                            <h4>Mohammed Khan</h4>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <span class="date">3 months ago</span>
-                    </div>
-                    <p>"Awesome service..... Spec work is too good. I am highly impressed and recommend others to visit here. Professional eye testing by certified optometrist made all the difference."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header animate-fade-in">
-                <h2>Visit Our Store</h2>
-                <p>We're here to help you see better and look great</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card animate-slide-left" style="--contact-index: 1">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Address</h3>
-                            <p>Suraj Chashma Ghar</p>
-                            <p>Nikol, Ahmedabad</p>
-                            <p>Gujarat 382350</p>
-                            <p class="pin-code"><i class="fas fa-map-pin"></i> Pincode: 382350</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card animate-slide-left" style="--contact-index: 2">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Opening Hours</h3>
-                            <p><strong>Monday - Saturday:</strong> 9:00 AM - 9:00 PM</p>
-                            <p><strong>Sunday:</strong> 9:00 AM - 7:00 PM</p>
-                            <p><strong>Lunch Break:</strong> 1:00 PM - 2:00 PM (Daily)</p>
-                            <p class="status animate-glow" id="storeStatus">Checking current status...</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card animate-slide-left" style="--contact-index: 3">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Contact</h3>
-                            <p><strong>Phone:</strong> <a href="tel:7069343403">70693 43403</a></p>
-                            <p><strong>WhatsApp:</strong> <a href="https://wa.me/917069343403">+91 70693 43403</a></p>
-                            <p><strong>Email:</strong> <a href="mailto:surajchashmaghar@gmail.com">surajchashmaghar@gmail.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card animate-slide-left" style="--contact-index: 4">
-                        <div class="contact-icon">
-                            <i class="fas fa-wallet"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Payment Methods</h3>
-                            <p>✓ Cash</p>
-                            <p>✓ UPI / Google Pay / PhonePe</p>
-                            <p>✓ All major payment options accepted</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-map">
-                    <div class="map-container animate-slide-right">
-                        <h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
-                        <div class="map-frame">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.726887206455!2d72.5175953!3d23.0507315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9c0b94d8f1a5%3A0xd7c5b8b5c5c5c5c5!2sSuraj%20Chashma%20Ghar!5e0!3m2!1sen!2sin!4v1641234567890!5m2!1sen!2sin" 
-                                width="100%" 
-                                height="300" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                        <div class="map-actions">
-                            <a href="https://www.google.com/maps/search/suraj+chashma+ghar/@23.0507315,72.5175953,12z?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" 
-                               class="btn-primary" target="_blank">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
-                            <a href="tel:7069343403" class="btn-secondary">
-                                <i class="fas fa-phone"></i> Call Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section animate-fade-in">
-                    <div class="logo">
-                        <div class="logo-icon">
-                            <i class="fas fa-glasses"></i>
-                        </div>
-                        <div class="logo-text">
-                            <h3>Suraj <span>Chashma Ghar</span></h3>
-                            <p>Premium Eyewear Since 2012</p>
-                        </div>
-                    </div>
-                    <p class="footer-description">Your trusted optical shop in Nikol, Ahmedabad offering premium eyewear and professional eye care services by certified optometrist for over 12 years.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/1jQUBsT28T/" target="_blank" title="Facebook" style="--social-index: 1">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://www.instagram.com/suraj_chashma_ghar?igsh=b3B0OXJoY2Yyd3Jk" target="_blank" title="Instagram" style="--social-index: 2">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/917069343403" target="_blank" title="WhatsApp" style="--social-index: 3">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://youtube.com/@kathanshah56?si=gy3ou2pSTDFUp84j" target="_blank" title="YouTube" style="--social-index: 4">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-section animate-fade-in">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#frames">Frame Collection</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section animate-fade-in">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="#services">Eye Testing</a></li>
-                        <li><a href="#services">Prescription Glasses</a></li>
-                        <li><a href="#services">Sunglasses</a></li>
-                        <li><a href="#services">Cataract Glasses</a></li>
-                        <li><a href="#services">Repairs & Adjustments</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section animate-fade-in">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> Nikol, Ahmedabad - 382350</li>
-                        <li><i class="fas fa-phone"></i> <a href="tel:7069343403">70693 43403</a></li>
-                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/917069343403">+91 70693 43403</a></li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 9 AM - 9 PM<br>Sun: 9 AM - 7 PM</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom animate-fade-in">
-                <p>&copy; 2012-2023 Suraj Chashma Ghar. All rights reserved. | Owner: Kathan Shah</p>
-                <p>Pincode: 382350 | Serving Nikol since 2012</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating Action Buttons -->
-    <div class="floating-buttons">
-        <a href="https://wa.me/917069343403" class="float-btn whatsapp animate-pulse-custom" target="_blank" title="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="tel:7069343403" class="float-btn call" title="Call Now">
-            <i class="fas fa-phone"></i>
-        </a>
-        <a href="https://www.facebook.com/share/1jQUBsT28T/" class="float-btn facebook" target="_blank" title="Facebook">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/suraj_chashma_ghar?igsh=b3B0OXJoY2Yyd3Jk" class="float-btn instagram" target="_blank" title="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://youtube.com/@kathanshah56?si=gy3ou2pSTDFUp84j" class="float-btn youtube" target="_blank" title="YouTube">
-            <i class="fab fa-youtube"></i>
-        </a>
-    </div>
-
-    <!-- Scripts -->
+    <!-- CORRECT JavaScript link -->
     <script src="main.js"></script>
+    
+    <!-- Test script -->
+    <script>
+        function testAnim() {
+            // Create a test animation
+            const test = document.createElement('div');
+            test.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #1a5f7a;
+                color: white;
+                padding: 30px;
+                border-radius: 15px;
+                z-index: 10000;
+                animation: testAnim 0.5s;
+            `;
+            
+            // Add keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes testAnim {
+                    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+                    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            test.innerHTML = `
+                <h3>🎯 Animation Test</h3>
+                <p>If you see this with animation, JavaScript works!</p>
+                <p>CSS Loaded: <span id="cssStatus">Checking...</span></p>
+                <button onclick="this.parentElement.remove()">Close</button>
+            `;
+            
+            document.body.appendChild(test);
+            
+            // Check if CSS loaded
+            setTimeout(() => {
+                const cssLoaded = Array.from(document.styleSheets).some(sheet => 
+                    sheet.href && sheet.href.includes('style.css')
+                );
+                
+                document.getElementById('cssStatus').innerHTML = cssLoaded 
+                    ? '<span style="color:#25D366">✅ LOADED</span>' 
+                    : '<span style="color:#ff4444">❌ NOT LOADED</span>';
+                
+                if (!cssLoaded) {
+                    document.getElementById('cssStatus').innerHTML += 
+                        '<br>Fix: Rename CSS file to "style.css" (lowercase)';
+                }
+            }, 100);
+        }
+        
+        // Test on load
+        setTimeout(testAnim, 1000);
+    </script>
 </body>
 </html>
+
 
 
 
