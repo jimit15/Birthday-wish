@@ -702,6 +702,222 @@ header.scrolled {
         scroll-behavior: auto !important;
     }
 }
+/* Additional Keyframes for JavaScript Animations */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Modal Styles */
+.booking-modal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideInModal {
+    from {
+        transform: translateY(-50px) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    animation: slideInModal 0.3s ease-out;
+}
+
+/* Store Status Animation */
+.status.open {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.status.lunch {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.status.closed {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Frame Loading Animation */
+.frames-grid {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* No Frames Animation */
+.no-frames {
+    animation: shake 0.5s ease-out;
+    text-align: center;
+    padding: 40px;
+    grid-column: 1 / -1;
+}
+
+.no-frames i {
+    font-size: 48px;
+    color: var(--primary);
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Loading Screen */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid var(--light-gray);
+    border-top: 5px solid var(--primary);
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    z-index: 1001;
+    transition: width 0.1s ease;
+}
+
+/* Active Nav Link Animation */
+.nav-link.active {
+    position: relative;
+    color: var(--primary);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    animation: slideInLeft 0.3s ease-out;
+}
+
+/* Hover Effects */
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu Animations */
+.mobile-nav.active {
+    animation: slideInBottom 0.3s ease-out forwards;
+}
+
+.mobile-nav li {
+    animation: slideInLeft 0.3s ease-out forwards;
+    opacity: 0;
+}
+
+/* Filter Button Animation */
+.filter-btn.active {
+    animation: pulse 0.3s ease-out;
+    transform: translateY(-2px);
+}
+
+/* Image Loading Animation */
+img {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* WhatsApp Float Button Special Animation */
+.float-btn.whatsapp {
+    animation: pulse-custom 2s infinite;
+}
+
+@keyframes pulse-custom {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Call Button Special Animation */
+.float-btn.call {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Rating Badge Animation */
+.rating-badge:hover {
+    animation: bounce 0.5s ease-out;
+}
+
+/* Frame Card Image Hover */
+.frame-image {
+    overflow: hidden;
+}
+
+.frame-image img {
+    transition: transform 0.5s ease;
+}
+
+.frame-card:hover .frame-image img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* Service Icon Hover Animation */
+.service-icon {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: rotate(15deg) scale(1.1);
+    animation: bounce 0.5s ease-out;
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
 
 
 
